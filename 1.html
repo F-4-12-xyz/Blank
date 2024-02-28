@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title id="judul"></title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-size: 10vw;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+
+        .stiker {
+            font-size: 100vw;
+            animation: spin 5s linear infinite;
+            white-space: nowrap;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            const stikers = ['🖕', '🙏', '🗿'];
+            let index = 0;
+            setInterval(function() {
+                document.getElementById('judul').textContent = stikers[index];
+                document.querySelector('.stiker').textContent = stikers[index];
+                index = (index + 1) % stikers.length;
+            }, 750);
+        }
+    </script>
+</head>
+<body>
+    <div class="stiker">🖕</div>
+</body>
+</html>
